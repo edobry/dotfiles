@@ -3,13 +3,13 @@ source ~/.zplug/init.zsh
 
 zplug romkatv/powerlevel10k, as:theme, depth:1
 
-zplug "plugins/zsh-completions", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/osx", from:oh-my-zsh
 zplug "plugins/aws", from:oh-my-zsh
 zplug "plugins/kubectl", from:oh-my-zsh
 zplug "plugins/autojump", from:oh-my-zsh
 
+zplug "zsh-users/zsh-completions"
 zplug "DarrinTisdale/zsh-aliases-exa"
 zplug "gradle/gradle-completion"
 zplug "Dbz/kube-aliases"
