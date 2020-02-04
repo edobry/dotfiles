@@ -1,0 +1,4 @@
+set linenumbers
+set constantshow
+
+include ~/.nano/nanorc/*.nanorc
