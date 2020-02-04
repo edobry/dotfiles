@@ -1,0 +1,3 @@
+export JENKINS_USER_ID=eugene@chainalysis.com
+export JENKINS_API_TOKEN=1176bb21fb22251b281bdfa4b9d9d9d681
+
