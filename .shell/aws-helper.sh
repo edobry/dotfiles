@@ -7,17 +7,7 @@ then
     exit 1
 fi
 
-export GOOGLE_IDP_ID=C01pghfef
-export GOOGLE_SP_ID=869108112291
-export DURATION=14400
-
-AWS_DEFAULT_PROFILE="dev-eng"
-
-AWS_DEV_PROFILE=dev-eng
-AWS_DEV_ENG_ARN=arn:aws:iam::477596031399:role/Dev-Engineering
-
-AWS_DATAENGDEV_PROFILE=dev-dataeng
-AWS_DATAENGDEV_ARN=arn:aws:iam::413583117059:role/dataeng-dev-admin
+source ./aws-values.sh
 
 if [[ `uname` == 'Darwin' ]]; then
     export AWS_GOOGLE_AUTH_EXTRA_ARGS="--keyring"
