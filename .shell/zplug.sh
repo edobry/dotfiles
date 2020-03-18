@@ -3,7 +3,6 @@ source ~/.zplug/init.zsh
 
 zplug romkatv/powerlevel10k, as:theme, depth:1
 
-zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/osx", from:oh-my-zsh
 zplug "plugins/aws", from:oh-my-zsh
 zplug "plugins/kubectl", from:oh-my-zsh
@@ -16,6 +15,7 @@ zplug "Dbz/kube-aliases"
 
 zplug "plugins/history-substring-search", from:oh-my-zsh, defer:3
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-autosuggestions"
 
 zplug load
 
