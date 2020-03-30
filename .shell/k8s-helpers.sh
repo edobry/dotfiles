@@ -16,6 +16,11 @@ function upDeploy() {
     kubectl scale deployment $1 --replicas=1
 }
 
+function reDeploy() {
+    downDeploy $1
+    upDeploy $1
+}
+
 DEV_DIR=~/Projects/dataeng-pipeline/dev
 DEBUG_POD="test-shell"
 function debugPod() {
