@@ -24,3 +24,8 @@ function debugPod() {
     k exec $DEBUG_POD --container $DEBUG_POD -i --tty -- /bin/bash
     k delete pods $DEBUG_POD --grace-period=0 --force
 }
+
+function getToken() {
+    local eksAdminSecret="$(kubectl -n kube-system get secret | grep eks-admin | awk '{print $1}')"
+    kubectl -n kube-system describe secret $eksAdminSecret | grep 'token:' | awk '{print $2}' | pbcopy
+}
