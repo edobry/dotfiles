@@ -34,3 +34,27 @@ function getToken() {
     local eksAdminSecret="$(kubectl -n kube-system get secret | grep eks-admin | awk '{print $1}')"
     kubectl -n kube-system describe secret $eksAdminSecret | grep 'token:' | awk '{print $2}' | pbcopy
 }
+
+TF_DIR="$HOME/Projects/terraform"
+TF_DATAENG_DIR="$TF_DIR/env/dataeng-dev"
+function runTF() {
+    cd $TF_DATAENG_DIR/$1 && shift
+    terraform $*
+    cd $OLDPWD
+}
+
+function getMSKBrokers() {
+    local mskBrokers=$(runTF bnb-kafka output msk_bootstrap_brokers)
+    echo $mskBrokers
+}
+
+alias escapeCommas="sed 's/,/\\\,/g'"
+
+HELM_HOME="$HOME/Projects/dataeng-pipeline/charts"
+EXTERNAL_DIR="$HELM_HOME/external-resources"
+function makeService() {
+    local name=$1
+    shift
+    helm template $name $EXTERNAL_DIR/service --set name=$name $*
+}
+

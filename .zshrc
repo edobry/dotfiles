@@ -31,4 +31,4 @@ export SDKMAN_DIR="/Users/dobry/.sdkman"
 
 source ~/.iterm2_shell_integration.zsh
 
-for f in ~/.shell/*; do source $f; done
+source ~/.shell/*.sh

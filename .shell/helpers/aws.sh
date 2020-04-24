@@ -22,7 +22,7 @@ function do_aws_google_auth()
     local _profile=$1
     local _arn=$2
     unset AWS_PROFILE
-    aws-google-auth -q ${AWS_GOOGLE_AUTH_EXTRA_ARGS} --profile ${_profile} --role-arn ${_arn} $3
+    gsts -q ${AWS_GOOGLE_AUTH_EXTRA_ARGS} --aws-profile ${_profile} --aws-role-arn ${_arn} $3
     export AWS_PROFILE=${_profile}
     aws sts get-caller-identity
 }
