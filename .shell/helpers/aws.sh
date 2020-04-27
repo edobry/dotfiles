@@ -34,3 +34,7 @@ function aws-dev(){
 function aws-dataeng(){
     do_aws_google_auth ${AWS_DATAENGDEV_PROFILE} ${AWS_DATAENGDEV_ARN} $1
 }
+
+function aws-dataeng-prod(){
+    do_aws_google_auth ${AWS_DATAENG_PROD_PROFILE} ${AWS_DATAENG_PROD_ARN} $1
+}
