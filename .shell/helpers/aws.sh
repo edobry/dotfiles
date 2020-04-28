@@ -21,6 +21,7 @@ export DATAENG_PROD=data-warehouse-prod-admin
 
 function aws-auth() {
     export AWS_PROFILE=$1
+    aws-org-sso
     awsId | jq '.Arn' | awk -F '/' '{ print "Assumed role: " $2 }'
 }
 
