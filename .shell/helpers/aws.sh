@@ -1,40 +1,28 @@
 #!/usr/bin/env bash
 
+export GOOGLE_USERNAME=eugene@chainalysis.com
+export DEPT_ROLE=engineering-data
 
-if [[ -z "${GOOGLE_USERNAME} " ]]
-then
-    echo "GOOGLE_USERNAME must be set to your chainalysis email address."
-    exit 1
-fi
+export AWS_PROFILE=org-sso
+export AWS_SSO_MODE=gsts
 
-OWNDIR="$(dirname "$(which "$0")")"
+export AWS_HELPER_DIR=~/Projects/terraform/util/aws
+source $AWS_HELPER_DIR/org-sso-helper.sh
 
-source $OWNDIR/aws-values.sh
+#if [ ! -f ~/.aws/config ]; then
+#    ln -s $AWS_HELPER_DIR/config ~/.aws/config
+#fi
 
-if [[ `uname` == 'Darwin' ]]; then
-    export AWS_GOOGLE_AUTH_EXTRA_ARGS="--keyring"
-else
-    export AWS_GOOGLE_AUTH_EXTRA_ARGS=
-fi
+alias awsId='aws sts get-caller-identity'
 
-function do_aws_google_auth()
-{
-    local _profile=$1
-    local _arn=$2
-    unset AWS_PROFILE
-    gsts -q ${AWS_GOOGLE_AUTH_EXTRA_ARGS} --aws-profile ${_profile} --aws-role-arn ${_arn} $3
-    export AWS_PROFILE=${_profile}
-    aws sts get-caller-identity
+export DATAENG_DEV=dataeng-dev-admin
+export DATAENG_PROD=data-warehouse-prod-admin
+
+
+function aws-auth() {
+    export AWS_PROFILE=$1
+    awsId | jq '.Arn' | awk -F '/' '{ print "Assumed role: " $2 }'
 }
 
-function aws-dev(){
-    do_aws_google_auth ${AWS_DEV_PROFILE} ${AWS_DEV_ENG_ARN} $1
-}
-
-function aws-dataeng(){
-    do_aws_google_auth ${AWS_DATAENGDEV_PROFILE} ${AWS_DATAENGDEV_ARN} $1
-}
-
-function aws-dataeng-prod(){
-    do_aws_google_auth ${AWS_DATAENG_PROD_PROFILE} ${AWS_DATAENG_PROD_ARN} $1
-}
+alias aws-dataeng-dev='aws-auth $DATAENG_DEV'
+alias aws-dataeng-prod='aws-auth $DATAENG_PROD'
