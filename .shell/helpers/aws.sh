@@ -4,14 +4,9 @@ export GOOGLE_USERNAME=eugene@chainalysis.com
 export DEPT_ROLE=engineering-data
 
 export AWS_PROFILE=org-sso
-export AWS_SSO_MODE=gsts
 
 export AWS_HELPER_DIR=~/Projects/terraform/util/aws
 source $AWS_HELPER_DIR/org-sso-helper.sh
-
-#if [ ! -f ~/.aws/config ]; then
-#    ln -s $AWS_HELPER_DIR/config ~/.aws/config
-#fi
 
 alias awsId='aws sts get-caller-identity'
 
