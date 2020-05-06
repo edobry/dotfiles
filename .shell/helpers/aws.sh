@@ -18,9 +18,13 @@ alias awsId='aws sts get-caller-identity'
 export DATAENG_DEV=dataeng-dev-admin
 export DATAENG_PROD=data-warehouse-prod-admin
 
+function awsRole() {
+    awsId | jq '.Arn' | awk -F '/' '{ print $2 }'
+}
+
 function aws-auth() {
     export AWS_PROFILE=$1
-    awsId | jq '.Arn' | awk -F '/' '{ print "Assumed role: " $2 }'
+    echo "Assumed role: $(awsRole)"
 }
 
 alias aws-dataeng-dev='aws-auth $DATAENG_DEV'
