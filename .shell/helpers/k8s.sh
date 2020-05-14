@@ -51,10 +51,13 @@ function getMSKBrokers() {
 alias escapeCommas="sed 's/,/\\\,/g'"
 
 HELM_HOME="$HOME/Projects/dataeng-pipeline/charts"
-EXTERNAL_DIR="$HELM_HOME/external-resources"
+EXTERNAL_DIR="$HELM_HOME/external"
 function makeService() {
     local name=$1
     shift
     helm template $name $EXTERNAL_DIR/service --set name=$name $*
 }
 
+function getRegcred() {
+    kubectl get secret regcred -o=json | jq -r '.data. ".dockerconfigjson"' | base64 -D | jq '.'
+}
