@@ -61,3 +61,7 @@ function makeService() {
 function getRegcred() {
     kubectl get secret regcred -o=json | jq -r '.data. ".dockerconfigjson"' | base64 -D | jq '.'
 }
+
+function getRegcredAuthString() {
+    getRegcred | jq -r ".auths .\"$1\" .auth" | base64 -D
+}
