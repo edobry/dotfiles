@@ -12,7 +12,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
 zstyle ':completion:*' menu select=1
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
-zstyle :compinstall filename '/Users/dobry/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit
@@ -23,12 +23,13 @@ HISTSIZE=1000
 SAVEHIST=10000
 setopt appendhistory autocd notify
 bindkey -e
-# End of lines configured by zsh-newuser-install
+# End of lines configured by zsh-newuser-installsett
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/dobry/.sdkman"
-[[ -s "/Users/dobry/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/dobry/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
-source ~/.iterm2_shell_integration.zsh
+source ~/.shell/init.sh
 
-source ~/.shell/*.sh
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
