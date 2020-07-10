@@ -43,3 +43,5 @@ loadDir $DT_DIR/helpers/init/*.sh
 
 # load helpers
 loadDir $DT_DIR/helpers/*.sh
+
+source $PROJECT_DIR/dataeng-tools/shell/helpers/completions.zsh
