@@ -15,5 +15,3 @@ function editHelpers() {
     nano $file
     source $file
 }
-
-alias bat='batcat'

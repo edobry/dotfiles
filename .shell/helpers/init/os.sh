@@ -22,4 +22,6 @@ else
     function openUrl() {
         xdg-open $1
     }
+
+    alias bat='batcat'
 fi
