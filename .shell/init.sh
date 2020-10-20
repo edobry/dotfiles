@@ -19,7 +19,7 @@ function loadDir() {
 }
 
 function checkDeps() {
-    local expectedYqVersion="3.3.0"
+    local expectedYqVersion="3.4.0"
     if [[ $(yq --version | awk '{ print $3 }') != $expectedYqVersion ]]; then
         echo "incorrect yq version, '$expectedYqVersion' expected!"
         return 1
