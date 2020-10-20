@@ -10,7 +10,7 @@ else
     SCRIPT_PATH="$SOURCE_DIR/init.sh"
 fi
 
-export DT_DIR="$(dirname $SCRIPT_PATH)"
+export SHELL_DIR="$(dirname $SCRIPT_PATH)"
 
 function loadDir() {
     for f in "$@";
@@ -39,9 +39,12 @@ fi
 
 
 # load init scripts
-loadDir $DT_DIR/helpers/init/*.sh
+loadDir $SHELL_DIR/helpers/init/*.sh
 
 # load helpers
-loadDir $DT_DIR/helpers/*.sh
+loadDir $SHELL_DIR/helpers/*.sh
 
-source $PROJECT_DIR/dataeng-tools/shell/helpers/completions.zsh
+# zsh features loaded on zsh shells
+if [ -n "$ZSH_VERSION" ]; then
+    loadDir $SHELL_DIR/helpers/*.zsh
+fi
