@@ -15,3 +15,5 @@ function editHelpers() {
     nano $file
     source $file
 }
+
+alias kv='kubectl version'
