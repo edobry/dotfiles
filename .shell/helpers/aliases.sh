@@ -2,7 +2,7 @@ alias please='sudo $(fc -ln -1)'
 
 alias editZshrc='nano ~/.zshrc && zsh'
 
-SHELL_DIR="$HOME/.shell"
+SHELL_DIR="$HOME/.shell/helpers"
 
 alias editZplug='nano $SHELL_DIR/zplug-env.sh && source $SHELL_DIR/zplug-env.sh && zplug install && zplug load'
 alias editAliases='nano $SHELL_DIR/aliases.sh && source $SHELL_DIR/aliases.sh'
