@@ -17,6 +17,7 @@ zplug "plugins/history-substring-search", from:oh-my-zsh, defer:3
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
 zplug "Aloxaf/fzf-tab"
+zplug "reegnz/jq-zsh-plugin"
 
 zplug load
 
