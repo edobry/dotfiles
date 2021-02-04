@@ -19,7 +19,7 @@ function loadDir() {
 }
 
 function checkDeps() {
-    local expectedYqVersion="3.4.0"
+    local expectedYqVersion="4.4.1"
     if [[ $(yq --version | awk '{ print $3 }') != $expectedYqVersion ]]; then
         echo "incorrect yq version, '$expectedYqVersion' expected!"
         return 1
@@ -41,10 +41,11 @@ fi
 # load init scripts
 loadDir $SHELL_DIR/helpers/init/*.sh
 
-# load helpers
-loadDir $SHELL_DIR/helpers/*.sh
-
 # zsh features loaded on zsh shells
 if [ -n "$ZSH_VERSION" ]; then
     loadDir $SHELL_DIR/helpers/*.zsh
 fi
+
+# load helpers
+loadDir $SHELL_DIR/helpers/*.sh
+
