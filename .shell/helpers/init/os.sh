@@ -4,7 +4,7 @@ function isOSX() {
     [[ $(uname) == 'Darwin' ]]
 }
 
-if [[ `uname` == 'Darwin' ]]; then
+if isOSX; then
     function toClip() {
         pbcopy
     }
@@ -12,6 +12,8 @@ if [[ `uname` == 'Darwin' ]]; then
     function openUrl() {
         open $1
     }
+
+    alias flushDNS='sudo killall -HUP mDNSResponder'
 
     source ~/.iterm2_shell_integration.zsh
 else
