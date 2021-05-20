@@ -15,7 +15,8 @@ zinit ice svn
 zinit snippet OMZP::kubectl
 
 zinit ice svn
-zinit snippet OMZP::autojump
+#zinit snippet OMZP::autojump
+zinit load "agkozak/zsh-z"
 
 zinit light "DarrinTisdale/zsh-aliases-exa"
 
