@@ -15,7 +15,6 @@ zinit ice svn
 zinit snippet OMZP::kubectl
 
 zinit ice svn
-#zinit snippet OMZP::autojump
 zinit load "agkozak/zsh-z"
 
 zinit light "DarrinTisdale/zsh-aliases-exa"
@@ -28,13 +27,8 @@ zinit load "Dbz/kube-aliases"
 zinit ice svn
 zinit snippet OMZP::history-substring-search
 
-#zinit light "zsh-users/zsh-syntax-highlighting"
-#zinit light "zsh-users/zsh-autosuggestions"
 zinit light "Aloxaf/fzf-tab"
 zinit light "reegnz/jq-zsh-plugin"
-
-#zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
-#    zsh-users/zsh-completions
 
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
