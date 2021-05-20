@@ -1,3 +1,5 @@
+zmodload zsh/zprof
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
@@ -14,7 +16,6 @@ zstyle ':completion:*' menu select=1
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle :compinstall filename "$HOME/.zshrc"
 
-autoload -Uz +X compinit && compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -28,14 +29,13 @@ bindkey -e
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
+# set up helpers
+source ~/.shell/init.sh
+
+autoload -Uz +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 
 complete -o nospace -C /usr/local/bin/kustomize kustomize
 source <(stern --completion=zsh)
-
-source ~/.shell/init.sh
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH="/usr/local/opt/ansible@2.9/bin:$PATH"
