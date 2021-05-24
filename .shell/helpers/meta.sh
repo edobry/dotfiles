@@ -1,1 +1,6 @@
-alias dotConfig='/usr/bin/git --git-dir=$HOME/.files/ --work-tree=$HOME'
+alias dotconfig='/usr/bin/git --git-dir=$HOME/.files/ --work-tree=$HOME'
+alias dotc='dotconfig'
+alias dotcs='dotconfig status'
+alias dotca='dotconfig add'
+alias dotcc='dotconfig commit -m'
+alias dotcp='dotconfig push'
