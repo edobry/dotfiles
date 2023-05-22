@@ -13,6 +13,10 @@ if isMacOS; then
         open $1
     }
 
+    function checkCpuLimit() {
+        pmset -g therm | grep 'CPU_Speed_Limit' | awk '{ print $3 }'
+    }
+
     alias flushDNS='sudo killall -HUP mDNSResponder'
 
     test -e ~/.iterm2_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh || true
