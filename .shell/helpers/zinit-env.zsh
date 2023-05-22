@@ -37,6 +37,10 @@ zinit load "Dbz/kube-aliases"
 zinit ice svn
 zinit snippet OMZP::history-substring-search
 
+# zsh-fzf-history-search
+zinit ice lucid wait'0'
+zinit light joshskidmore/zsh-fzf-history-search
+
 zinit light "reegnz/jq-zsh-plugin"
 
 zinit light-mode lucid wait has"kubectl" for \
