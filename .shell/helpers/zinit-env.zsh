@@ -79,13 +79,32 @@ zinit light-mode lucid wait has"fnm" for \
    run-atpull \
    zdharma-continuum/null
 
+
+function zinitCompSetup() {
+   zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+   zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
+   zstyle ':completion:*' menu select=1
+   zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+   zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+   zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+   zstyle :compinstall filename "$HOME/.zshrc"
+
+   # End of lines added by compinstall
+   zstyle ':fzf-tab:complete:cd:*' extra-opts --preview=$extract'exa -1 --color=always $realpath'
+   # set descriptions format to enable group support
+   zstyle ':completion:*:descriptions' format '[%d]'
+}
+
+zinit ice wait"1" lucid
 zinit light "Aloxaf/fzf-tab"
 
-zinit wait lucid for \
-    zdharma-continuum/fast-syntax-highlighting \
+zinit wait"0a" lucid for \
+atclone"zinit creinstall -q /usr/share/zsh/site-functions" \
+ atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay; zinitCompSetup;" \
+   zdharma-continuum/fast-syntax-highlighting \
  blockf \
-    "zsh-users/zsh-completions" \
+    zsh-users/zsh-completions \
  atload"!_zsh_autosuggest_start" \
-    "zsh-users/zsh-autosuggestions"
-
-zinit ice lucid wait atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay"
+    "zsh-users/zsh-autosuggestions" \
