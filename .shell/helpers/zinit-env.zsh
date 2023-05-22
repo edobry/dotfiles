@@ -12,9 +12,9 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit ice lucid atload'source ~/.p10k.zsh; _p9k_precmd; p10k finalize' nocd
 zinit light romkatv/powerlevel10k
 
-if isOSX; then
+if isMacOS; then
     zinit ice svn
-    zinit snippet OMZ::plugins/osx
+    zinit snippet OMZ::plugins/macos
 fi
 
 zinit ice svn

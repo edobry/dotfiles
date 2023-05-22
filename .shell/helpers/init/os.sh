@@ -1,10 +1,10 @@
 # checking if we're in macOS or linux
 
-function isOSX() {
+function isMacOS() {
     [[ $(uname) == 'Darwin' ]]
 }
 
-if isOSX; then
+if isMacOS; then
     function toClip() {
         pbcopy
     }
@@ -15,7 +15,7 @@ if isOSX; then
 
     alias flushDNS='sudo killall -HUP mDNSResponder'
 
-    source ~/.iterm2_shell_integration.zsh
+    test -e ~/.iterm2_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh || true
 else
     function toClip() {
         xclip -selection clipboard
