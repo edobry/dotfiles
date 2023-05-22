@@ -11,6 +11,7 @@ else
 fi
 
 export SHELL_DIR="$(dirname $SCRIPT_PATH)"
+export PROJECT_DIR="$HOME/Projects"
 
 function loadDir() {
     for f in "$@";
