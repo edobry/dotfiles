@@ -1,10 +1,11 @@
-# zplug
+# zinit
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 ZINIT_INSTALL_DIR="$(dirname $ZINIT_HOME)"
 mkdir -p $ZINIT_INSTALL_DIR
-if [ -d "${ZINIT_INSTALL_DIR}/.git" ]; then
-  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+if [ ! -d "${ZINIT_INSTALL_DIR}/zinit.git" ]; then
+    echo "Running first-time zinit setup..."
+    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
 source "${ZINIT_HOME}/zinit.zsh"
