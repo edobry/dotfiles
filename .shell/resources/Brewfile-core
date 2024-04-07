@@ -1,0 +1,39 @@
+brew "cask"
+tap "homebrew/bundle"
+tap "homebrew/cask-versions"
+tap "homebrew/services"
+
+brew "bash"
+brew "coreutils"
+brew "bash-completion"
+brew "zplug"
+brew "zsh"
+brew "zsh-completions"
+
+brew "gcc"
+
+brew "git"
+brew "git-filter-repo"
+brew "git-lfs"
+
+brew "gnupg"
+
+brew "grep"
+brew "nano"
+brew "watch"
+
+brew "bat"
+brew "exa"
+brew "fzf"
+
+brew "htop"
+
+brew "pass"
+brew "pass-otp"
+
+brew "jq"
+
+brew "bitwarden-cli"
+
+
+cask "amethyst"
