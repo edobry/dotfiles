@@ -1,0 +1,12 @@
+# ignore everything
+*
+
+# besides
+
+## configs 
+!.gitignore
+
+## the .shell dir
+!/.shell/
+!/.shell/*/
+!/.shell/*/*
