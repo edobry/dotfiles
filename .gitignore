@@ -8,5 +8,3 @@
 
 ## the .shell dir
 !/.shell/
-!/.shell/*/
-!/.shell/*/*
