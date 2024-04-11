@@ -11,9 +11,12 @@ Requirements:
 
 Configure these dotfiles on a new machine by running the following commands:
 
+> [!CAUTION]
+> Note that this will overwrite any existing managed files on the machine.
+
 ```bash
 git clone --bare git@github.com:edobry/dotfiles.git $HOME/.files
-git --git-dir=$HOME/.files/ --work-tree=$HOME checkout
+git --git-dir=$HOME/.files/ --work-tree=$HOME checkout -f
 ```
 
 ## References
