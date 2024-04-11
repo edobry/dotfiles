@@ -1,6 +1,5 @@
 # meta
 brew "cask"
-tap "homebrew/core"
 tap "homebrew/bundle"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
@@ -67,5 +66,5 @@ brew "findutils"
 
 # rust cli utils
 brew "bat"
-brew "exa"
+brew "eza"
 brew "fzf"
