@@ -3,6 +3,9 @@
 
 # besides
 
+## meta
+!/.github/
+
 ## configs 
 !.gitignore
 
