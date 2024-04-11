@@ -20,13 +20,13 @@ function loadDir() {
 }
 
 function checkDeps() {
-    local expectedYqVersion="v4.33.3"
+    local expectedYqVersion="v4.43.1"
     if [[ $(yq --version | awk '{ print $4 }') != $expectedYqVersion ]]; then
         echo "incorrect yq version, '$expectedYqVersion' expected!"
         return 1
     fi
 
-    local expectedJqVersion="1.6"
+    local expectedJqVersion="1.7.1"
     if [[ $(jq --version | awk -F '-' '{ print $2 }') != $expectedJqVersion ]]; then
         echo "incorrect jq version, '$expectedJqVersion' expected!"
         return 1
@@ -49,4 +49,3 @@ fi
 
 # load helpers
 loadDir $SHELL_DIR/helpers/*.sh
-
