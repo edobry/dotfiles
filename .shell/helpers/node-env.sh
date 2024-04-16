@@ -7,5 +7,15 @@
 
 if checkCommand "fnm"; then
     export PATH="$HOME/.local/share/fnm:$PATH"
+
+    # completions
+    zinit light-mode lucid wait has"fnm" for \
+        id-as"fnm_completion" \
+        as"completion" \
+        atclone"fnm completions --shell zsh > _fnm" \
+        atpull"%atclone" \
+        run-atpull \
+        zdharma-continuum/null
+
     eval "$(fnm env --use-on-cd)"
 fi
