@@ -16,7 +16,6 @@ zinit light romkatv/powerlevel10k
 # https://github.com/zdharma-continuum/zinit/issues/481#issuecomment-1480192402
 function zinitSnippetOmz() {
    local snippet=$1
-   local type=${2:-OMZ}
 
    # init repo if not exists
    local dir="$ZINIT_INSTALL_DIR/snippets/OMZ::plugins"
@@ -30,10 +29,7 @@ function zinitSnippetOmz() {
       return
    fi
 
-   # prefix snippet name with "plugins" if type is OMZ
-   local snippetName=$([[ $type == "OMZ" ]] && echo plugins/$snippet || echo $snippet)
-
-   (( !OPTS[opt_-q,--quiet] )) && +zi-log "{nl}{i} Initializing {file}$snippetName{rst} (with git sparse-checkout)"
+   (( !OPTS[opt_-q,--quiet] )) && +zi-log "{nl}{i} Initializing {file}$snippet{rst} (with git sparse-checkout)"
    (( !OPTS[opt_-q,--quiet] )) && +zi-log "{info}Note{info}:{msg} See {url}https://github.com/zdharma-continuum/zinit/issues/504#issuecomment-1887858354{msg} for details"
 
    pushd $omzRepoDir > /dev/null
@@ -44,7 +40,7 @@ function zinitSnippetOmz() {
    cp -R $pluginDir ../$snippet
    popd > /dev/null
 
-   zinit snippet $type::$snippetName
+   zinit snippet OMZ::plugins/$snippet
 }
 
 if isMacOS; then
@@ -74,11 +70,11 @@ zinit light "gradle/gradle-completion"
 
 # aws
 
-zinitSnippetOmz aws OMZP
+zinitSnippetOmz aws
 
 # k8s
 
-zinitSnippetOmz kubectl OMZP
+zinitSnippetOmz kubectl
 
 zinit load "Dbz/kube-aliases"
 
