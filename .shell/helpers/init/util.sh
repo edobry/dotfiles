@@ -10,3 +10,9 @@ function escapeCommas(){
 function checkNumeric() {
     [[ $1 =~ '^[0-9]+$' ]]
 }
+
+# checks if a command exists
+# args: command
+function checkCommand() {
+    command -v "$1" >/dev/null 2>&1
+}

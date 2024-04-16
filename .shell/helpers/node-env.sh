@@ -5,6 +5,7 @@
 #    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 #}
 
-export PATH="$HOME/.local/share/fnm:$PATH"
-eval "$(fnm env --use-on-cd)"
-
+if checkCommand "fnm"; then
+    export PATH="$HOME/.local/share/fnm:$PATH"
+    eval "$(fnm env --use-on-cd)"
+fi
