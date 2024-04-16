@@ -11,3 +11,4 @@
 
 ## the .shell dir
 !/.shell/
+!/.shell/*
