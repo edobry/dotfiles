@@ -6,10 +6,10 @@ alias dotconfig='/usr/bin/git --git-dir=$HOME/.files/ --work-tree=$HOME'
 alias dotc='dotconfig'
 
 # dotc status
-alias dotcs='dotc status | less -R'
+alias dotcs='dotc status'
 
 # dotc git log
-alias dotclog='dotc log --graph --decorate --all --color | less -R'
+alias dotclog='dotc log --graph --decorate --all --color'
 
 # cd to dotc
 alias dotccd='cd $DC_DIR'
