@@ -1,14 +1,21 @@
-# zinit
+function zInit() {
+   export ZINIT_INSTALL_DIR="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit"
+   export ZINIT_HOME="$ZINIT_INSTALL_DIR/zinit.git"
+   
+   if [ ! -d "$ZINIT_HOME" ]; then
+      GREEN=$(tput setaf 2)
+      NC=$(tput sgr0)
 
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-ZINIT_INSTALL_DIR="$(dirname $ZINIT_HOME)"
-mkdir -p $ZINIT_INSTALL_DIR
-if [ ! -d "${ZINIT_INSTALL_DIR}/zinit.git" ]; then
-    echo "Running first-time zinit setup..."
-    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-fi
+      echo "${GREEN}==>${NC} Running first-time zinit setup"
+      
+      mkdir -p $ZINIT_INSTALL_DIR
+      git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+   fi
 
-source "${ZINIT_HOME}/zinit.zsh"
+   source "$ZINIT_HOME/zinit.zsh"
+}
+
+zInit
 
 zinit ice lucid atload'source ~/.p10k.zsh; _p9k_precmd; p10k finalize' nocd
 zinit light romkatv/powerlevel10k
@@ -25,6 +32,7 @@ function zinitSnippetOmz() {
 
       mkdir -p $omzRepoDir && pushd $dir > /dev/null
       git clone -n --depth=1 --filter=tree:0 https://github.com/ohmyzsh/ohmyzsh
+      popd > /dev/null
    elif [[ -d "$dir/$snippet" ]]; then
       return
    fi
@@ -38,9 +46,9 @@ function zinitSnippetOmz() {
    git sparse-checkout set --no-cone $pluginDir > /dev/null 2>&1
    git checkout > /dev/null 2>&1
    cp -R $pluginDir ../$snippet
-   popd > /dev/null
 
    zinit snippet OMZ::plugins/$snippet
+   popd > /dev/null
 }
 
 if isMacOS; then
@@ -59,6 +67,9 @@ zinitSnippetOmz history-substring-search
 zinit ice lucid wait'0'
 zinit light joshskidmore/zsh-fzf-history-search
 
+zinit ice wait"1" lucid
+zinit light "Aloxaf/fzf-tab"
+
 # shell utils
 
 zinit light "reegnz/jq-zsh-plugin"
@@ -76,8 +87,6 @@ zinitSnippetOmz aws
 
 zinitSnippetOmz kubectl
 
-zinit load "Dbz/kube-aliases"
-
 zinit light-mode lucid wait has"kubectl" for \
    id-as"kubectl_completion" \
    as"completion" \
@@ -85,6 +94,8 @@ zinit light-mode lucid wait has"kubectl" for \
    atpull"%atclone" \
    run-atpull \
    zdharma-continuum/null
+
+zinit load "Dbz/kube-aliases"
 
 zinit light-mode lucid wait has"helm" for \
    id-as"helm_completion" \
@@ -110,17 +121,6 @@ zinit light-mode lucid wait has"stern" for \
    run-atpull \
    zdharma-continuum/null
 
-zinit light-mode lucid wait has"fnm" for \
-   id-as"fnm_completion" \
-   as"completion" \
-   atclone"fnm completions --shell zsh > _fnm" \
-   atpull"%atclone" \
-   run-atpull \
-   zdharma-continuum/null
-
-zinit ice wait"1" lucid
-zinit light "Aloxaf/fzf-tab"
-
 function zinitCompSetup() {
    zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
    zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -139,10 +139,10 @@ function zinitCompSetup() {
 }
 
 zinit wait"0a" lucid for \
-atclone"zinit creinstall -q /usr/share/zsh/site-functions" \
- atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay; zinitCompSetup;" \
-   zdharma-continuum/fast-syntax-highlighting \
- blockf \
-    zsh-users/zsh-completions \
- atload"!_zsh_autosuggest_start" \
-    "zsh-users/zsh-autosuggestions" \
+   atclone"zinit creinstall -q /usr/share/zsh/site-functions" \
+   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay; zinitCompSetup;" \
+      zdharma-continuum/fast-syntax-highlighting \
+   blockf \
+      zsh-users/zsh-completions \
+   atload"!_zsh_autosuggest_start" \
+      "zsh-users/zsh-autosuggestions" \
