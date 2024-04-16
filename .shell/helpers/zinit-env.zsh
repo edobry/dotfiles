@@ -53,6 +53,7 @@ fi
 
 # shell features
 
+# zinit ice svn
 zinit load "agkozak/zsh-z"
 
 zinit light "DarrinTisdale/zsh-aliases-exa"
@@ -132,11 +133,11 @@ function zinitCompSetup() {
    zstyle ':completion:*' menu select=1
    zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
    zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-   zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+   zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
    zstyle :compinstall filename "$HOME/.zshrc"
 
    # End of lines added by compinstall
-   zstyle ':fzf-tab:complete:cd:*' extra-opts --preview=$extract'exa -1 --color=always $realpath'
+   zstyle ':fzf-tab:complete:cd:*' extra-opts --preview=$extract'eza -1 --color=always $realpath'
    # set descriptions format to enable group support
    zstyle ':completion:*:descriptions' format '[%d]'
 }
