@@ -122,6 +122,8 @@ zinit light-mode lucid wait has"stern" for \
    zdharma-continuum/null
 
 function zinitCompSetup() {
+   fpath=($SHELL_DIR/completions $fpath)
+
    zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
    zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
@@ -130,7 +132,7 @@ function zinitCompSetup() {
    zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
    zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
    zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-   zstyle :compinstall filename "$HOME/.zshrc"
+   zstyle :compinstall filename "$SHELL_DIR/resources/compinstall.zsh"
 
    # End of lines added by compinstall
    zstyle ':fzf-tab:complete:cd:*' extra-opts --preview=$extract'eza -1 --color=always $realpath'
@@ -140,9 +142,9 @@ function zinitCompSetup() {
 
 zinit wait"0a" lucid for \
    atclone"zinit creinstall -q /usr/share/zsh/site-functions" \
-   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay; zinitCompSetup;" \
+   atinit"ZINIT[COMPINIT_OPTS]=-C; zinitCompSetup; zicompinit; zicdreplay;" \
       zdharma-continuum/fast-syntax-highlighting \
    blockf \
       zsh-users/zsh-completions \
    atload"!_zsh_autosuggest_start" \
-      "zsh-users/zsh-autosuggestions" \
+      "zsh-users/zsh-autosuggestions"

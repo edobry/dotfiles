@@ -1,0 +1,62 @@
+#compdef ollama
+# https://chat.openai.com/share/90b71b89-927d-4610-ac10-716cb3129953
+
+_ollama() {
+    local -a commands
+    local curcontext="$curcontext" state line
+
+    typeset -A opt_args
+
+    _arguments -C \
+        '(-v --version)'{-v,--version}'[show version information]' \
+        '1: :->cmds' \
+        '*:: :->args'
+
+    case $state in
+    (cmds)
+        commands=(
+            'create:Create a model from a Modelfile'
+            'show:Show information for a model'
+            'run:Run a model'
+            'pull:Pull a model from a registry'
+            'push:Push a model to a registry'
+            'list:List models'
+            'cp:Copy a model'
+            'rm:Remove a model'
+            'serve:Start ollama'
+        )
+        _describe -t commands 'ollama command' commands
+    ;;
+    (args)
+        case $words[1] in
+        (create|show|pull|push|run)
+            _arguments '1: :_files'
+            _arguments '2: :_files'
+            _arguments '--file[specify the Modelfile]:file:_files'
+            _arguments '--quantization[specify quantization level]:level:'
+            _arguments '--license[show license of the model]'
+            _arguments '--modelfile[show Modelfile of the model]'
+            _arguments '--parameters[show parameters of the model]'
+            _arguments '--template[show template of the model]'
+            _arguments '--system[show system message of the model]'
+            _arguments '--verbose[show timings for response]'
+            _arguments '--insecure[use an insecure registry]'
+            _arguments '--nowordwrap[disable word wrap]'
+            _arguments '--format[specify response format]:format:(json xml plain)'
+        ;;
+        (cp|rm)
+            _arguments '1:source model:_files' '2:target model:_files'
+        ;;
+        (list)
+            # No specific options needed for list
+        ;;
+        (serve)
+            _arguments '--port[specify server port]:port:_ports'
+            _arguments '--debug[enable debug logging]'
+        ;;
+        esac
+    ;;
+    esac
+}
+
+_ollama
