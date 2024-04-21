@@ -15,7 +15,7 @@ function macosSetup() {
 
     # configure macos settings
     echo "disable spotlight indexing..."
-    sudo mdutil -i off
+    sudo mdutil -i off -a
     waitForUser
 
     # prereqs
