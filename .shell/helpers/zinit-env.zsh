@@ -122,7 +122,7 @@ zinit light-mode lucid wait has"stern" for \
    zdharma-continuum/null
 
 function zinitCompSetup() {
-   fpath=($SHELL_DIR/completions $fpath)
+   fpath=($SHELL_DIR/completions $(brew --prefix)/share/zsh/site-functions $fpath)
 
    zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
    zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
