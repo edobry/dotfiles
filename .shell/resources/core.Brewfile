@@ -22,6 +22,10 @@ brew "glib"
 brew "gobject-introspection"
 brew "libxml2"
 brew "libxmlsec1"
+brew "readline"
+brew "sqlite3"
+brew "zlib"
+brew "tcl-tk"
 
 ## https://nghttp2.org/
 brew "nghttp2"
@@ -55,6 +59,7 @@ brew "krb5"
 brew "libssh"
 brew "libssh2"
 brew "openssl@3", link: false
+brew "xz"
 
 # cli utils
 brew "grep"

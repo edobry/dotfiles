@@ -20,10 +20,10 @@ brew "node"
 brew "yarn"
 
 ## python
-brew "python@3.9"
-brew "python@3.8"
-brew "python@3.10"
-brew "python@2", link: false
+# brew "python@3.9"
+# brew "python@3.8"
+# brew "python@3.10"
+# brew "python@2", link: false
 brew "pyenv"
 brew "pyenv-virtualenv"
 brew "pipenv"
