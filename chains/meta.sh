@@ -115,3 +115,7 @@ alias dotcc='dotc commit -m'
 
 # dotc push
 alias dotcp='dotc push'
+
+function chezmoiCd() {
+    cd $(chezmoi source-path)
+}
