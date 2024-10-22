@@ -19,3 +19,8 @@ if checkCommand "fnm"; then
 
     eval "$(fnm env --use-on-cd)"
 fi
+
+function nodeEnvInit() {
+    npm install -g corepack
+    corepack enable
+}

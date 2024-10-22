@@ -7,8 +7,9 @@ sourceEnv() {
     fi
 }
 
+alias originalCd="cd"
 chdir() {
-    cd $1
+    originalCd $1
     sourceEnv
 }
 

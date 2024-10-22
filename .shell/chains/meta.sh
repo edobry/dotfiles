@@ -1,5 +1,5 @@
 DC_DIR="$HOME/.shell"
-DC_HELPERS_DIR="$DC_DIR/helpers"
+DC_HELPERS_DIR="$DC_DIR/chains"
 
 # scope git to the dotfiles repo
 alias dotconfig='/usr/bin/git --git-dir=$HOME/.files/ --work-tree=$HOME'
@@ -14,14 +14,14 @@ alias dotclog='dotc log --graph --decorate --all --color'
 # cd to dotc
 alias dotccd='cd $DC_DIR'
 
-# dotc ls helpers
+# dotc ls chains
 alias dotcls='ls $DC_HELPERS_DIR'
 
 # edit .zshrc and reload shell
 alias doterc='$EDITOR $HOME/.zshrc && exec zsh'
 
 # dotc diff
-alias dotcd='dotc diff'
+alias dotcd='dotc diff HEAD --'
 
 # dotc diff helper
 function dotcdh() {
