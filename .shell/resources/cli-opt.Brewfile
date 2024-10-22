@@ -5,6 +5,8 @@ brew "yq"
 brew "dateutils"
 brew "pv"
 
+cask "osquery"
+
 # https://github.com/emcrisostomo/fswatch
 brew "fswatch"
 
@@ -30,11 +32,3 @@ brew "wireguard-tools"
 
 ## dns resolver
 brew "unbound"
-
-# secrets management
-brew "pass"
-brew "pass-otp"
-
-brew "bitwarden-cli"
-
-brew "oath-toolkit"

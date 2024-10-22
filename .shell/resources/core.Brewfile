@@ -62,6 +62,8 @@ brew "openssl@3", link: false
 brew "xz"
 
 # cli utils
+cask "iterm2"
+
 brew "grep"
 brew "nano"
 brew "watch"
