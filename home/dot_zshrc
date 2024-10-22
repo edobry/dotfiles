@@ -1,8 +1,7 @@
 zmodload zsh/zprof
 
-# set up helpers
-# source ~/.shell/init.sh
-export CHI_DOTFILES_DIR="$HOME/.shell"
+# set up chitin
+export CHI_DOTFILES_DIR=$CHEZMOI_SOURCE_DIR
 source $HOME/Projects/chitin/init.sh
 
 # color support

@@ -115,4 +115,4 @@ function githubAddSshKey() {
 
 echo "Starting first-time MacOS setup..."
 waitForUser
-macosSetup "<email>" "<PAT>"
+macosSetup $EMAIL $GH_TOKEN
