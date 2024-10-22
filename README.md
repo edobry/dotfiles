@@ -1,6 +1,6 @@
 # .files
 
-My personal shell configuration, using a modular initialization system.
+My personal shell configuration, intended for use with [chitin](https://github.com/edobry/chitin).
 
 Requirements:
 
