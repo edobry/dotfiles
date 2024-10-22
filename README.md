@@ -9,15 +9,16 @@ Requirements:
 
 ## Installation
 
-Configure these dotfiles on a new machine by running the following commands:
+This repo uses [chezmoi](https://www.chezmoi.io/) to manage dotfiles. Configure a new machine by running the following command:
 
 > [!CAUTION]
 > Note that this will overwrite any existing managed files on the machine.
 
 ```bash
-git clone --bare git@github.com:edobry/dotfiles.git $HOME/.files
-git --git-dir=$HOME/.files/ --work-tree=$HOME checkout -f
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $GITHUB_USERNAME
 ```
+
+This command will also [configure your system](./home/run_once_after_install_macos.sh) on first install.
 
 ## References
 
