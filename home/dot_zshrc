@@ -1,7 +1,6 @@
 zmodload zsh/zprof
 
 # set up chitin
-export CHI_DOTFILES_DIR=$CHEZMOI_SOURCE_DIR
 source $HOME/Projects/chitin/init.sh
 
 # color support
