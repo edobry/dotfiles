@@ -1,5 +1,8 @@
 zmodload zsh/zprof
 
+# load brew PATHs
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # set up chitin
 source $HOME/Projects/chitin/init.sh
 
