@@ -13,6 +13,7 @@ function zInit() {
    fi
 
    source "$ZINIT_HOME/zinit.zsh"
+   # echo "loaded zinit"
 }
 
 zInit
@@ -60,7 +61,8 @@ fi
 # zinit ice svn
 zinit load "agkozak/zsh-z"
 
-zinit light "DarrinTisdale/zsh-aliases-exa"
+# zinit light "DarrinTisdale/zsh-aliases-exa"
+zinitSnippetOmz eza
 
 zinitSnippetOmz history-substring-search
 
@@ -122,7 +124,7 @@ zinit light-mode lucid wait has"stern" for \
    zdharma-continuum/null
 
 function zinitCompSetup() {
-   fpath=($SHELL_DIR/completions $(brew --prefix)/share/zsh/site-functions $fpath)
+   fpath=($CHI_DOTFILES_DIR/completions $(brew --prefix)/share/zsh/site-functions $fpath)
 
    zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
    zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -130,21 +132,32 @@ function zinitCompSetup() {
    zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
    zstyle ':completion:*' menu select=1
    zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+   zstyle ':fzf-tab:*' use-fzf-default-opts yes
    zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-   zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-   zstyle :compinstall filename "$SHELL_DIR/resources/compinstall.zsh"
-
-   # End of lines added by compinstall
    zstyle ':fzf-tab:complete:cd:*' extra-opts --preview=$extract'eza -1 --color=always $realpath'
+
    # set descriptions format to enable group support
    zstyle ':completion:*:descriptions' format '[%d]'
+
+   # echo "zi comp init"
+   zicompinit; zicdreplay;
+   # echo "zi replayed"
 }
 
-zinit wait"0a" lucid for \
+zinit for \
    atclone"zinit creinstall -q /usr/share/zsh/site-functions" \
-   atinit"ZINIT[COMPINIT_OPTS]=-C; zinitCompSetup; zicompinit; zicdreplay;" \
+   atinit"ZINIT[COMPINIT_OPTS]=-C; zinitCompSetup" \
       zdharma-continuum/fast-syntax-highlighting \
    blockf \
       zsh-users/zsh-completions \
    atload"!_zsh_autosuggest_start" \
       "zsh-users/zsh-autosuggestions"
+
+function zinitCompReset() {
+   zinit delete --clean
+   zinit cclear
+   rm ~/.zcompdump*
+
+   autoload -Uz compinit
+   compinit -c
+}
