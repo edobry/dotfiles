@@ -1,3 +1,5 @@
+chiRegisterCompletion "$0" || return 0
+
 #compdef ollama
 # https://chat.openai.com/share/90b71b89-927d-4610-ac10-716cb3129953
 
