@@ -1,0 +1,11 @@
+packages:
+  brew:
+    groups:
+      - name: secrets management
+        casks:
+          - bitwarden
+        formulas:
+          - pass
+          - pass-otp
+          - bitwarden-cli
+          - oath-toolkit

@@ -1,0 +1,50 @@
+packages:
+  brew:
+    groups:
+      - name: version control
+        formulas:
+          - git-filter-repo
+          - git-lfs
+          - gh
+        casks:
+          - gitkraken
+      - name: repo utils
+        formulas:
+          - pre-commit
+      - name: runtimes
+        formulas:
+          # gnu extension language
+          - guile
+          - name: tcl-tk
+            link: false
+          - node
+          - yarn
+          - pyenv
+          - pyenv-virtualenv
+          - pipenv
+          - go
+          - gradle-completion
+          - rust
+          - android-platform-tools
+      - name: cli utils
+        taps:
+          - mike-engel/jwt-cli
+          - name: zmwangx/ets
+            url: https://github.com/zmwangx/ets
+        formulas:
+          - mike-engel/jwt-cli/jwt-cli
+          # command output timestamper
+          - zmwangx/ets/ets
+      - name: markdown
+        formulas:
+          - mdcat
+      - name: networking
+        formulas:
+          - telnet
+          - nmap
+          - zenmap
+          - wireshark
+          - httpie
+      - name: IDEs
+        formulas:
+          - visual-studio-code

@@ -1,0 +1,18 @@
+packages:
+  brew:
+    groups:
+      - name: containers
+        casks:
+          - docker
+        taps:
+          - jesseduffield/lazydocker
+        formulas:
+          - jesseduffield/lazydocker/lazydocker
+          # layer explorer
+          - dive
+          # https://github.com/runfinch/finch
+          - finch
+      - name: linux VMs
+        formulas:
+          # https://lima-vm.io/
+          - lima

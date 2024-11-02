@@ -1,0 +1,29 @@
+packages:
+  brew:
+    groups:
+      - name: aws
+        taps:
+          - aws/tap
+        formulas:
+          - awscli
+          - gimme-aws-creds
+          - aws/tap/ec2-instance-selector
+      - name: gcloud
+        casks:
+          - google-cloud-sdk
+      - name: terraform
+        taps:
+          - minamijoyo/tfmigrate
+          - warrensbox/tap
+        formulas:
+          - terraform@0.12
+          - terraformer
+          - name: terragrunt
+            link: false
+          - tfenv
+          - tflint
+          - minamijoyo/tfmigrate/tfmigrate
+          - warrensbox/tap/tgswitch
+      - name: ansible
+        formulas:
+          - ansible@2.9

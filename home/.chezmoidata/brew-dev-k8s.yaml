@@ -1,0 +1,46 @@
+packages:
+  brew:
+    groups:
+      - name: distros
+        formulas:
+          - minikube
+      - name: cli
+        taps:
+          - derailed/k9s
+        formulas:
+          - kubernetes-cli
+          - kube-ps1
+          - kubectx
+          - kubie
+          - derailed/k9s/k9s
+      - name: kustomize
+        formulas:
+          - kustomize
+      - name: helm
+        taps:
+          - norwoodj/tap
+        formulas:
+          - helm
+          - norwoodj/tap/helm-docs
+      - name: tilt
+        taps:
+          - tilt-dev/tap
+        formulas:
+          - tilt-dev/tap/tilt
+      - name: k8s pods debugging
+        taps:
+          - aylei/tap
+        formulas:
+          # unmaintained, upgrade to https://github.com/JamesTGrant/kubectl-debug
+          - aylei/tap/kubectl-debug
+      - name: logging
+        taps:
+          - boz/repo
+        formulas:
+          # https://github.com/boz/kail
+          - boz/repo/kail
+          # https://github.com/stern/stern
+          - stern
+      - name: gui
+        casks:
+          - lens

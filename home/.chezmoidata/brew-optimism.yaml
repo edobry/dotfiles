@@ -1,0 +1,10 @@
+packages:
+  brew:
+    groups:
+      - name: oplabs
+        casks:
+          - 1password
+      - name: optimism-dev
+        formulas:
+          - 1password-cli
+          - ethereum-optimism/tap/supersim

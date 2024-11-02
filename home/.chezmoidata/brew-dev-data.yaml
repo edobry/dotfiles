@@ -1,0 +1,21 @@
+packages:
+  brew:
+    groups:
+      - name: sql
+        formulas:
+          - sqlite
+          - postgresql@14
+          - flyway
+        casks:
+          - pgadmin4
+      - name: kafka
+        taps:
+          - conduktor/brew
+        formulas:
+          - kafka
+          - librdkafka
+          # https://github.com/edenhill/kcat
+          - kcat
+        casks:
+          - kafka-tool
+          - conduktor
