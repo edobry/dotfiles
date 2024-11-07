@@ -1,0 +1,113 @@
+# tools:
+#   cask:
+#     brew: {}
+# # version control
+#   git:
+#     brew: {}
+#   subversion:
+#     brew: {}
+# # shell
+#   bash:
+#     brew: {}
+#   bash-completion:
+#     brew: {}
+#   coreutils:
+#     brew: {}
+#   zsh:
+#     brew: {}
+#   zsh-completions:
+#     brew: {}
+#   zplug:
+#     brew: {}
+# # runtime deps
+#   gcc:
+#     brew: {}
+#   glib:
+#     brew: {}
+#   gobject-introspection:
+#     brew: {}
+#   libxml2:
+#     brew: {}
+#   libxmlsec1:
+#     brew: {}
+#   readline:
+#     brew: {}
+#   sqlite3:
+#     brew: {}
+#   zlib:
+#     brew: {}
+#   tcl-tk:
+#     brew: {}
+#   # https://nghttp2.org/
+#   nghttp2:
+#     brew: {}
+# # media
+#   webp:
+#     brew: {}
+#   jpeg-xl:
+#     brew: {}
+#   libavif:
+#     brew: {}
+#   aom:
+#     brew: {}
+#   gd:
+#     brew: {}
+#   gdk-pixbuf:
+#     brew: {}
+#   netpbm:
+#     brew: {}
+# # fonts
+#   fontconfig:
+#     brew: {}
+#   harfbuzz:
+#     brew: {}
+#   pango:
+#     brew: {}
+# # svg
+#   cairo:
+#     brew: {}
+#   librsvg:
+#     brew: {}
+# # viz
+#   graphviz:
+#     brew: {}
+# # crypto
+#   gnupg:
+#     brew: {}
+#   gnutls:
+#     brew: {}
+#   krb5:
+#     brew: {}
+#   libssh:
+#     brew: {}
+#   libssh2:
+#     brew: {}
+#   openssl@3:
+#     brew:
+#       link: false
+#   xz:
+#     brew: {}
+# # cli utils
+#   grep:
+#     brew: {}
+#   nano:
+#     brew: {}
+#   watch:
+#     brew: {}
+#   gawk:
+#     brew: {}
+#   # GNU find, xargs, locate
+#   findutils:
+#     brew: {}
+#   iterm2:
+#     brew:
+#       cask: true
+# # rust cli utils
+#   bat:
+#     brew: {}
+#   eza:
+#     brew: {}
+#   fzf:
+#     brew: {}
+#   test:
+#     curl: 'tgrege'

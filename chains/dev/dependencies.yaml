@@ -1,0 +1,83 @@
+tools:
+# version control
+  git-filter-repo:
+    brew: {}
+  git-lfs:
+    brew: {}
+  gh:
+    brew: {}
+  gitkraken:
+    brew:
+      cask: true
+# repo utils
+  pre-commit:
+    brew: {}
+# runtimes
+  # gnu extension language
+  guile:
+    optional: true
+    brew: {}
+  tcl-tk:
+    optional: true
+    brew:
+      link: false
+  node:
+    brew: {}
+  yarn:
+    brew: {}
+  pyenv:
+    brew: {}
+  pyenv-virtualenv:
+    brew: {}
+  pipenv:
+    brew: {}
+  go:
+    brew: {}
+  gradle-completion:
+    optional: true
+    brew: {}
+  rust:
+    optional: true
+    brew: {}
+  android-platform-tools:
+    optional: true
+    brew: {}
+# cli utils
+  mike-engel/jwt-cli/jwt-cli:
+    optional: true
+    brew:
+      tap: mike-engel/jwt-cli
+  # command output timestamper
+  zmwangx/ets/ets:
+    optional: true
+    brew:
+      tap: zmwangx/ets
+      tapUrl: https://github.com/zmwangx/ets
+# markdown
+  mdcat:
+    brew: {}
+# networking
+  telnet:
+    brew: {}
+  nmap:
+    brew: {}
+  zenmap:
+    optional: true
+    brew: {}
+  wireshark:
+    optional: true
+    brew: {}
+  wireshark-gui:
+    optional: true
+    brew:
+      cask: true
+  wireshark-chmodbpf:
+    optional: true
+    brew:
+      cask: true
+  httpie:
+    brew: {}
+# IDEs
+  visual-studio-code:
+    brew:
+      cask: true

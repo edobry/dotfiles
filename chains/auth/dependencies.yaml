@@ -1,0 +1,15 @@
+tools:
+  pass:
+    brew: {}
+  pass-otp:
+    checkBrew: true
+    brew: {}
+  bitwarden-cli:
+    optional: true
+    checkCommand: bw
+    brew: {}
+  bitwarden:
+    optional: true
+    checkBrew: true
+    brew:
+      cask: true
