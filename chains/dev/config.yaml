@@ -1,3 +1,4 @@
+enabled: false
 tools:
 # version control
   git-filter-repo:
@@ -7,6 +8,7 @@ tools:
   gh:
     brew: {}
   gitkraken:
+    optional: true
     brew:
       cask: true
 # repo utils
@@ -79,5 +81,6 @@ tools:
     brew: {}
 # IDEs
   visual-studio-code:
+    optional: true
     brew:
       cask: true

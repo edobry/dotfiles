@@ -112,7 +112,7 @@ tools:
     checkBrew: true
     brew: {}
   iterm2:
-    checkBrew: true
+    optional: true
     brew:
       cask: true
 # rust cli utils
@@ -125,7 +125,7 @@ tools:
     brew: {}
       # version: "1.1"
 toolDeps:
-  - iterm2
+  # - iterm2
   - bash
   - zsh
   - git

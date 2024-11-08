@@ -10,6 +10,5 @@ tools:
     brew: {}
   bitwarden:
     optional: true
-    checkBrew: true
     brew:
       cask: true

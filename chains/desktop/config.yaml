@@ -1,3 +1,4 @@
+enabled: false
 tools:
 # app store
   # mac app store cli
@@ -6,59 +7,48 @@ tools:
 # desktop ux
   amethyst:
     optional: true
-    checkBrew: true
     brew:
       cask: true
   rectangle:
     optional: true
-    checkBrew: true
     brew:
       cask: true
   bartender:
     optional: true
-    checkBrew: true
     brew:
       cask: true
 # graphics
   gimp:
     optional: true
-    checkBrew: true
     brew:
       cask: true
 # system utilities
   istat-menus:
     optional: true
-    checkBrew: true
     brew:
       cask: true
   macs-fan-control:
     optional: true
-    checkBrew: true
     brew:
       cask: true
   logi-options-plus:
     optional: true
-    checkBrew: true
     brew:
       cask: true
 # networking
   tailscale:
-    checkBrew: true
     brew:
       cask: true
   nordvpn:
     optional: true
-    checkBrew: true
     brew:
       cask: true
   little-snitch:
     optional: true
-    checkBrew: true
     brew:
       cask: true
   neardrop:
     optional: true
-    checkBrew: true
     brew:
       cask: true
       no-quarantine: true
@@ -68,63 +58,52 @@ tools:
       cask: true
 # web
   google-chrome:
-    checkBrew: true
     brew:
       cask: true
 # command
   raycast:
-    checkBrew: true
     brew:
       cask: true
 # notes
   logseq:
     optional: true
-    checkBrew: true
     brew:
       cask: true
 # media
   spotify:
     optional: true
-    checkBrew: true
     brew:
       cask: true
 # conferencing
   krisp:
     optional: true
-    checkBrew: true
     brew:
       cask: true
   camo-studio:
     optional: true
-    checkBrew: true
     brew:
       cask: true
 # communications
   slack:
     optional: true
-    checkBrew: true
     brew:
       cask: true
   notion:
     optional: true
-    checkBrew: true
     brew:
       cask: true
   notion-calendar:
     optional: true
-    checkBrew: true
     brew:
       cask: true
 # social media
 # https://thedesk.top/
   thedesk:
     optional: true
-    checkBrew: true
     brew:
       cask: true
   # https://whalebird.social/
   whalebird:
     optional: true
-    checkBrew: true
     brew:
       cask: true
