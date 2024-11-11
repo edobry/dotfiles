@@ -47,7 +47,7 @@ function gitSetup() {
     local email="$1"
     local ghToken="$2"
 
-    local keyPath="~/.ssh/id_github"
+    local keyPath="$HOME/.ssh/id_github"
 
     log "generate ssh key"
     ssh-keygen -t ed25519 -C "$email" -f "$keyPath"
