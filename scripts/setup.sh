@@ -30,14 +30,6 @@ function macosSetup() {
     # sh <(curl https://tea.xyz)
     # waitForUser
 
-    log "configure shell"
-
-    log 'configure iTerm manually:
-     - iTerm Settings > Profiles > Default > Text > Font
-     - Select "MesloLGS Nerd Font Mono"
-     - Enable "Use ligatures"'
-    waitForUser
-
     log "setup chitin"
     
     sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply "$ghUser"
