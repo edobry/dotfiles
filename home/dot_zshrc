@@ -1,12 +1,9 @@
 zmodload zsh/zprof
 
-# load brew PATHs
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# set up chitin
-source $HOME/Projects/chitin/init.sh
-
 # color support
 autoload colors && colors
 LS_COLORS='no=00;37:fi=00:di=00;33:ln=04;36:pi=40;33:so=01;35:bd=40;33;01:'
 export LS_COLORS
+
+# set up chitin
+source $HOME/Projects/chitin/init.sh
