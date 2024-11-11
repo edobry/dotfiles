@@ -1,25 +1,34 @@
 # .files
 
-My personal shell configuration, intended for use with [chitin](https://github.com/edobry/chitin).
+My personal shell configuration, featuring:
 
-Requirements:
+- [dependency management](https://github.com/edobry/chitin) (`chitin`)
+- [intelligent module loading]((https://github.com/edobry/chitin)) (`chitin`)
+- [dotfiles management](https://www.chezmoi.io/) (`chezmoi`)
+- [zsh plugin management](https://github.com/zdharma-continuum/zinit/) (`zinit`)
+- [powerlevel10k](https://github.com/romkatv/powerlevel10k) zsh theme
+- automatic envfile loading
+- handy aliases
+- and much more!
 
-- `zsh >=5.8`
-- `git >= 2.31`
+## Setup
 
-## Installation
-
-This repo uses [chezmoi](https://www.chezmoi.io/) to manage dotfiles. Configure a new machine by running the following command:
+Follow these instructions to set up a new machine for the first time:
 
 > [!CAUTION]
-> Note that this will overwrite any existing managed files on the machine.
+> Note that this may overwrite any existing dotfiles on the machine.
 
-```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $GITHUB_USERNAME
-```
+1. Sign into Github and [generate a new (classic) PAT](https://github.com/settings/tokens/new), making sure to record it
+2. Open `Terminal` and run the following command, substituting the appropriate values:
 
-This command will also [configure your system](./home/run_once_after_install_macos.sh) on first install.
+    ```shell
+    EMAIL= \
+    GH_USERNAME= \
+    GH_TOKEN= \
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/edobry/dotfiles/HEAD/scripts/setup.sh)"
+    ```
 
-## References
-
-<https://www.atlassian.com/git/tutorials/dotfiles>
+3. Follow the instructions to configure `chitin` (run `chiConfigModify` and fill in the appropriate values)
+4. Update the instructions/script to account for any steps that may be missing, incomplete, or incorrect
+5. ????
+6. profit
