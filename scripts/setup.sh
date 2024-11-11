@@ -57,26 +57,28 @@ function gitSetup() {
     ssh-add --apple-use-keychain "$keyPath"
 
     log "add ssh key to Github"
-    githubAddSshKey $ghToken "$keyPath" "$(uname -n)-cli"
+    githubAddSshKey "$ghToken" "$keyPath" "$(uname -n)-cli"
 
     log "configure git to use ssh for all Github"
     git config --global url."git@github.com:".insteadOf "https://github.com/"
 }
 
 function githubAddSshKey() {
-    local pat=$1
-    local pubkeyPath=$2
-    local keyTitle=$3
+    local ghToken="$1"
+    local pubkeyPath="$2"
+    local keyTitle="$3"
 
-    local pubkey=$(cat $pubkeyPath)
+    local pubkey=$(cat "$pubkeyPath")
 
     # GitHub API URL
     local ghApiUrl="https://api.github.com/user/keys"
 
-    curl -H "Authorization: token $pat" \
-        -H "Accept: application/vnd.github.v3+json" \
+    curl -L \
+        -X POST \
+        -H "Accept: application/vnd.github+json" \
+        -H "Authorization: Bearer $ghToken" \
         --data "{\"title\":\"${keyTitle}\",\"key\":\"${pubkey}\"}" \
-        $ghApiUrl
+        "$ghApiUrl"
 }
 
 echo "Starting first-time MacOS setup..."
