@@ -1,6 +1,6 @@
 function zInit() {
-   # export ZINIT_INSTALL_DIR="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit"
-   # export ZINIT_HOME="$ZINIT_INSTALL_DIR/zinit.git"
+   export ZINIT_INSTALL_DIR="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit"
+   export ZINIT_HOME="$ZINIT_INSTALL_DIR/zinit.git"
    
    # if [ ! -d "$ZINIT_HOME" ]; then
    #    GREEN=$(tput setaf 2)
