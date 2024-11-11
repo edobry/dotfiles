@@ -13,6 +13,7 @@ function macosSetup() {
     local email="$1"
     local ghUser="$2"
     local ghToken="$3"
+    local projectDir="${4:-$HOME/Projects}"
 
     # configure macos settings
     echo "disable spotlight indexing..."
@@ -30,8 +31,10 @@ function macosSetup() {
     # sh <(curl https://tea.xyz)
     # waitForUser
 
-    log "setup chitin"
+    log "install chitin"
+    git clone git@github.com:edobry/chitin.git "$projectDir/chitin"
     
+    log "setup dotfiles"
     sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply "$ghUser"
 }
 
@@ -75,4 +78,4 @@ function githubAddSshKey() {
 
 echo "Starting first-time MacOS setup..."
 waitForUser
-macosSetup "$EMAIL" "$GH_USERNAME" "$GH_TOKEN"
+macosSetup "$EMAIL" "$GH_USERNAME" "$GH_TOKEN" "$PROJECT_DIR"

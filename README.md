@@ -25,6 +25,7 @@ Follow these instructions to set up a new machine for the first time:
     EMAIL= \
     GH_USERNAME= \
     GH_TOKEN= \
+    PROJECT_DIR= \
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/edobry/dotfiles/HEAD/scripts/setup.sh)"
     ```
 
