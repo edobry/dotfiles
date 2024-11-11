@@ -129,11 +129,9 @@ tools:
   bat:
     brew: {}
   eza:
-    brew:
-      tap: test
+    brew: {}
   fzf:
     brew: {}
-      # version: "1.1"
 toolDeps:
   # - iterm2
   - iterm-cli
