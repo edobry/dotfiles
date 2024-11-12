@@ -1,22 +1,7 @@
-function zInit() {
-   export ZINIT_INSTALL_DIR="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit"
-   export ZINIT_HOME="$ZINIT_INSTALL_DIR/zinit.git"
+export ZINIT_INSTALL_DIR="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit"
+export ZINIT_HOME="$ZINIT_INSTALL_DIR/zinit.git"
    
-   # if [ ! -d "$ZINIT_HOME" ]; then
-   #    GREEN=$(tput setaf 2)
-   #    NC=$(tput sgr0)
-
-   #    echo "${GREEN}==>${NC} Running first-time zinit setup"
-      
-   #    mkdir -p $ZINIT_INSTALL_DIR
-   #    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-   # fi
-
-   source "$ZINIT_HOME/zinit.zsh"
-   # echo "loaded zinit"
-}
-
-zInit
+source "$ZINIT_HOME/zinit.zsh"
 
 zinit ice lucid atload'source ~/.p10k.zsh; _p9k_precmd; p10k finalize' nocd
 zinit light romkatv/powerlevel10k
