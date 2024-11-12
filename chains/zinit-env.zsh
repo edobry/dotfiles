@@ -63,50 +63,56 @@ zinit light "reegnz/jq-zsh-plugin"
 
 # runtimes - java
 
-zinit ice as"completion"
-zinit light "gradle/gradle-completion"
+if checkCommand java; then
+   zinit ice as"completion"
+   zinit light "gradle/gradle-completion"
+fi
 
 # aws
 
-zinitSnippetOmz aws
+if checkCommand aws; then
+   zinitSnippetOmz aws
+fi
 
 # k8s
 
-zinitSnippetOmz kubectl
+if checkCommand kubectl; then
+   zinitSnippetOmz kubectl
 
-zinit light-mode lucid wait has"kubectl" for \
-   id-as"kubectl_completion" \
-   as"completion" \
-   atclone"kubectl completion zsh > _kubectl" \
-   atpull"%atclone" \
-   run-atpull \
-   zdharma-continuum/null
+   zinit light-mode lucid wait has"kubectl" for \
+      id-as"kubectl_completion" \
+      as"completion" \
+      atclone"kubectl completion zsh > _kubectl" \
+      atpull"%atclone" \
+      run-atpull \
+      zdharma-continuum/null
 
-zinit load "Dbz/kube-aliases"
+   zinit load "Dbz/kube-aliases"
 
-zinit light-mode lucid wait has"helm" for \
-   id-as"helm_completion" \
-   as"completion" \
-   atclone"helm completion zsh > _helm" \
-   atpull"%atclone" \
-   run-atpull \
-   zdharma-continuum/null
+   zinit light-mode lucid wait has"helm" for \
+      id-as"helm_completion" \
+      as"completion" \
+      atclone"helm completion zsh > _helm" \
+      atpull"%atclone" \
+      run-atpull \
+      zdharma-continuum/null
 
-zinit light-mode lucid wait has"kustomize" for \
-   id-as"kustomize_completion" \
-   as"completion" \
-   atclone"kustomize completion zsh > _kustomize" \
-   atpull"%atclone" \
-   run-atpull \
-   zdharma-continuum/null
+   zinit light-mode lucid wait has"kustomize" for \
+      id-as"kustomize_completion" \
+      as"completion" \
+      atclone"kustomize completion zsh > _kustomize" \
+      atpull"%atclone" \
+      run-atpull \
+      zdharma-continuum/null
 
-zinit light-mode lucid wait has"stern" for \
-   id-as"stern_completion" \
-   as"completion" \
-   atclone"stern --completion=zsh > _stern" \
-   atpull"%atclone" \
-   run-atpull \
-   zdharma-continuum/null
+   zinit light-mode lucid wait has"stern" for \
+      id-as"stern_completion" \
+      as"completion" \
+      atclone"stern --completion=zsh > _stern" \
+      atpull"%atclone" \
+      run-atpull \
+      zdharma-continuum/null
+fi
 
 function zinitCompSetup() {
    fpath=($CHI_DOTFILES_DIR/completions $(brew --prefix)/share/zsh/site-functions $fpath)
