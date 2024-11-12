@@ -33,6 +33,8 @@ tools:
       url: https://github.com/ryanoasis/nerd-fonts/raw/v3.0.0/patched-fonts/Meslo/S/Regular/MesloLGSNerdFontMono-Regular.ttf
       target: ~/Library/Fonts
       appendFilename: true
+  chezmoi:
+    brew: {}
 # runtime deps
   # gcc:
   #   brew: {}
@@ -136,6 +138,7 @@ toolDeps:
   # - iterm2
   - iterm-cli
   - menlo-font
+  - chezmoi
   - bash
   - zsh
   - git
