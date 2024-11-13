@@ -27,7 +27,7 @@ tools:
     checkPath: zinit.zsh
     git:
       url: https://github.com/zdharma-continuum/zinit.git
-      target: local/share/zinit/zinit.git
+      target: localshare/zinit/zinit.git
   menlo-font:
     artifact:
       url: https://github.com/ryanoasis/nerd-fonts/raw/v3.0.0/patched-fonts/Meslo/S/Regular/MesloLGSNerdFontMono-Regular.ttf
