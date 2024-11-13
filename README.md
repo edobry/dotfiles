@@ -29,7 +29,7 @@ Follow these instructions to set up a new machine for the first time:
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/edobry/dotfiles/HEAD/scripts/setup.sh)"
     ```
 
-3. Follow the instructions to configure `chitin` (run `chiConfigModify` and fill in the appropriate values)
+3. Follow the instructions to configure `chitin` (run `chiConfigUserModify` and fill in the appropriate values)
 4. Update the instructions/script to account for any steps that may be missing, incomplete, or incorrect
 5. ????
 6. profit
