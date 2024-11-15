@@ -1,13 +1,13 @@
 tools:
   pass:
-    brew: {}
+    brew: true
   pass-otp:
     checkBrew: true
-    brew: {}
+    brew: true
   bitwarden-cli:
     optional: true
     checkCommand: bw
-    brew: {}
+    brew: true
   bitwarden:
     optional: true
     brew:

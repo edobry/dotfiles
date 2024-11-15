@@ -1,28 +1,28 @@
 installToolDeps: true
 tools:
   cask:
-    brew: {}
+    brew: true
 # version control
   git:
-    brew: {}
+    brew: true
   # subversion:
-  #   brew: {}
+  #   brew: true
 # shell
   bash:
-    brew: {}
+    brew: true
   bash-completion:
     optional: true
     checkBrew: true
-    brew: {}
+    brew: true
   coreutils:
     checkBrew: true
-    brew: {}
+    brew: true
   zsh:
-    brew: {}
+    brew: true
   zsh-completions:
     optional: true
     checkBrew: true
-    brew: {}
+    brew: true
   zinit:
     checkPath: zinit.zsh
     git:
@@ -34,91 +34,91 @@ tools:
       target: ~/Library/Fonts
       appendFilename: true
   chezmoi:
-    brew: {}
+    brew: true
 # runtime deps
   # gcc:
-  #   brew: {}
+  #   brew: true
   # glib:
-  #   brew: {}
+  #   brew: true
   # gobject-introspection:
-  #   brew: {}
+  #   brew: true
   # libxml2:
-  #   brew: {}
+  #   brew: true
   # libxmlsec1:
-  #   brew: {}
+  #   brew: true
   # readline:
-  #   brew: {}
+  #   brew: true
   # sqlite3:
-  #   brew: {}
+  #   brew: true
   # zlib:
-  #   brew: {}
+  #   brew: true
   # tcl-tk:
-  #   brew: {}
+  #   brew: true
   # https://nghttp2.org/
   # nghttp2:
-  #   brew: {}
+  #   brew: true
 # media
   # webp:
-  #   brew: {}
+  #   brew: true
   # jpeg-xl:
-  #   brew: {}
+  #   brew: true
   # libavif:
-  #   brew: {}
+  #   brew: true
   # aom:
-  #   brew: {}
+  #   brew: true
   # gd:
-  #   brew: {}
+  #   brew: true
   # gdk-pixbuf:
-  #   brew: {}
+  #   brew: true
   # netpbm:
-  #   brew: {}
+  #   brew: true
 # fonts
   # fontconfig:
-  #   brew: {}
+  #   brew: true
   # harfbuzz:
-  #   brew: {}
+  #   brew: true
   # pango:
-  #   brew: {}
+  #   brew: true
 # svg
   # cairo:
-  #   brew: {}
+  #   brew: true
   # librsvg:
-  #   brew: {}
+  #   brew: true
 # viz
   graphviz:
     optional: true
-    brew: {}
+    brew: true
 # crypto
   gnupg:
     checkCommand: gpg
-    brew: {}
+    brew: true
   # gnutls:
-  #   brew: {}
+  #   brew: true
   # krb5:
-  #   brew: {}
+  #   brew: true
   # libssh:
-  #   brew: {}
+  #   brew: true
   # libssh2:
-  #   brew: {}
+  #   brew: true
   # openssl@3:
   #   brew:
   #     link: false
   # xz:
-  #   brew: {}
+  #   brew: true
 # cli utils
   grep:
-    brew: {}
+    brew: true
   nano:
-    brew: {}
+    brew: true
   watch:
-    brew: {}
+    brew: true
   gawk:
-    brew: {}
+    brew: true
   # GNU find, xargs, locate
   findutils:
     optional: true
     checkBrew: true
-    brew: {}
+    brew: true
   iterm2:
     optional: true
     brew:
@@ -129,11 +129,11 @@ tools:
       target: ~/.iterm2_shell_integration.zsh
 # rust cli utils
   bat:
-    brew: {}
+    brew: true
   eza:
-    brew: {}
+    brew: true
   fzf:
-    brew: {}
+    brew: true
 toolDeps:
   # - iterm2
   - iterm-cli

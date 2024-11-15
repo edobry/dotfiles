@@ -2,48 +2,48 @@ enabled: false
 tools:
 # version control
   git-filter-repo:
-    brew: {}
+    brew: true
   git-lfs:
-    brew: {}
+    brew: true
   gh:
-    brew: {}
+    brew: true
   gitkraken:
     optional: true
     brew:
       cask: true
 # repo utils
   pre-commit:
-    brew: {}
+    brew: true
 # runtimes
   # gnu extension language
   guile:
     optional: true
-    brew: {}
+    brew: true
   tcl-tk:
     optional: true
     brew:
       link: false
   node:
-    brew: {}
+    brew: true
   yarn:
-    brew: {}
+    brew: true
   pyenv:
-    brew: {}
+    brew: true
   pyenv-virtualenv:
-    brew: {}
+    brew: true
   pipenv:
-    brew: {}
+    brew: true
   go:
-    brew: {}
+    brew: true
   gradle-completion:
     optional: true
-    brew: {}
+    brew: true
   rust:
     optional: true
-    brew: {}
+    brew: true
   android-platform-tools:
     optional: true
-    brew: {}
+    brew: true
 # cli utils
   mike-engel/jwt-cli/jwt-cli:
     optional: true
@@ -57,18 +57,18 @@ tools:
       tapUrl: https://github.com/zmwangx/ets
 # markdown
   mdcat:
-    brew: {}
+    brew: true
 # networking
   telnet:
-    brew: {}
+    brew: true
   nmap:
-    brew: {}
+    brew: true
   zenmap:
     optional: true
-    brew: {}
+    brew: true
   wireshark:
     optional: true
-    brew: {}
+    brew: true
   wireshark-gui:
     optional: true
     brew:
@@ -78,7 +78,7 @@ tools:
     brew:
       cask: true
   httpie:
-    brew: {}
+    brew: true
 # IDEs
   visual-studio-code:
     optional: true

@@ -3,7 +3,7 @@ tools:
 # app store
   # mac app store cli
   mas:
-    brew: {}
+    brew: true
 # desktop ux
   amethyst:
     optional: true
