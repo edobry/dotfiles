@@ -1,5 +1,5 @@
 function bwUnlock() {
-    local sessionKey=$(bw unlock --raw)
+    local sessionKey="$(bw unlock --raw)"
     export BW_SESSION=$sessionKey
 }
 

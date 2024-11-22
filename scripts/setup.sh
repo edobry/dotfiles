@@ -63,7 +63,7 @@ function githubAddSshKey() {
     local pubkeyPath="$2"
     local keyTitle="$3"
 
-    local pubkey=$(cat "$pubkeyPath")
+    local pubkey="$(cat "$pubkeyPath")"
 
     # GitHub API URL
     local ghApiUrl="https://api.github.com/user/keys"

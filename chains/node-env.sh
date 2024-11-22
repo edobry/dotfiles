@@ -6,7 +6,7 @@
 #}
 
 if checkCommand "fnm"; then
-    export PATH="$HOME/.local/share/fnm:$PATH"
+    chiToolsAddDirToPath "$HOME/.local/share/fnm"
 
     # completions
     zinit light-mode lucid wait has"fnm" for \
