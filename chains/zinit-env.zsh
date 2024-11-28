@@ -46,16 +46,13 @@ fi
 # zinit ice svn
 zinit load "agkozak/zsh-z"
 
-# zinit light "DarrinTisdale/zsh-aliases-exa"
+zinit light "DarrinTisdale/zsh-aliases-exa"
 zinitSnippetOmz eza
 
 zinitSnippetOmz history-substring-search
 
-zinit ice lucid wait'0'
+zinit ice lucid # wait'0'
 zinit light joshskidmore/zsh-fzf-history-search
-
-zinit ice wait"1" lucid
-zinit light "Aloxaf/fzf-tab"
 
 # shell utils
 
@@ -79,7 +76,8 @@ fi
 if checkCommand kubectl; then
    zinitSnippetOmz kubectl
 
-   zinit light-mode lucid wait has"kubectl" for \
+   # zinit light-mode lucid wait has"kubectl" for \
+   zinit light-mode lucid has"kubectl" for \
       id-as"kubectl_completion" \
       as"completion" \
       atclone"kubectl completion zsh > _kubectl" \
@@ -89,7 +87,8 @@ if checkCommand kubectl; then
 
    zinit load "Dbz/kube-aliases"
 
-   zinit light-mode lucid wait has"helm" for \
+   # zinit light-mode lucid wait has"helm" for \
+   zinit light-mode lucid has"helm" for \
       id-as"helm_completion" \
       as"completion" \
       atclone"helm completion zsh > _helm" \
@@ -97,7 +96,8 @@ if checkCommand kubectl; then
       run-atpull \
       zdharma-continuum/null
 
-   zinit light-mode lucid wait has"kustomize" for \
+   # zinit light-mode lucid wait has"kustomize" for \
+   zinit light-mode lucid has"kustomize" for \
       id-as"kustomize_completion" \
       as"completion" \
       atclone"kustomize completion zsh > _kustomize" \
@@ -105,7 +105,8 @@ if checkCommand kubectl; then
       run-atpull \
       zdharma-continuum/null
 
-   zinit light-mode lucid wait has"stern" for \
+   # zinit light-mode lucid wait has"stern" for \
+   zinit light-mode lucid has"stern" for \
       id-as"stern_completion" \
       as"completion" \
       atclone"stern --completion=zsh > _stern" \
@@ -114,35 +115,31 @@ if checkCommand kubectl; then
       zdharma-continuum/null
 fi
 
-function zinitCompSetup() {
-   fpath=($CHI_DOTFILES_DIR/completions $(brew --prefix)/share/zsh/site-functions $fpath)
+# completions
 
-   zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
-   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+fpath=("$CHI_DOTFILES_DIR/completions" $fpath)
 
-   zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
-   zstyle ':completion:*' menu select=1
-   zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
-   zstyle ':fzf-tab:*' use-fzf-default-opts yes
-   zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-   zstyle ':fzf-tab:complete:cd:*' extra-opts --preview=$extract'eza -1 --color=always $realpath'
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-   # set descriptions format to enable group support
-   zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 
-   # echo "zi comp init"
-   zicompinit; zicdreplay;
-   # echo "zi replayed"
-}
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
 
-zinit for \
-   atclone"zinit creinstall -q /usr/share/zsh/site-functions" \
-   atinit"ZINIT[COMPINIT_OPTS]=-C; zinitCompSetup" \
-      zdharma-continuum/fast-syntax-highlighting \
-   blockf \
-      zsh-users/zsh-completions \
-   atload"!_zsh_autosuggest_start" \
-      "zsh-users/zsh-autosuggestions"
+zicompinit; zicdreplay;
+
+zinit light Aloxaf/fzf-tab
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+zstyle ':fzf-tab:complete:cd:*' extra-opts --preview=$extract'eza -1 --color=always $realpath'
+
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+
+zinit light zdharma-continuum/fast-syntax-highlighting
 
 function zinitCompReset() {
    zinit delete --clean
