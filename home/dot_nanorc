@@ -1,5 +1,5 @@
-# set linenumbers
+set linenumbers
 set constantshow
-# set mouse
+set mouse
 
-include ~/.nano/*.nanorc
+include ~/.nano/nanorc/*.nanorc

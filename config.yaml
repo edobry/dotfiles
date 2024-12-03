@@ -109,7 +109,13 @@ tools:
   grep:
     brew: true
   nano:
+    checkBrew: true
     brew: true
+  nanorc:
+    checkPath: readme.md
+    git:
+      url: git@github.com:scopatz/nanorc.git
+      target: ~/.nano/nanorc
   watch:
     brew: true
   gawk:
@@ -144,6 +150,7 @@ toolDeps:
   - git
   - zinit
   - nano
+  - nanorc
   - grep
   - watch
   - bat
