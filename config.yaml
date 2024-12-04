@@ -1,4 +1,3 @@
-installToolDeps: true
 tools:
   cask:
     brew: true
