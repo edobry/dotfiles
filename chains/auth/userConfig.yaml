@@ -1,0 +1,4 @@
+# the directory where your credentials are stored
+credsDir:
+# the name of the PGP key used to encrypt your credentials
+keyName:

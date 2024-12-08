@@ -12,3 +12,8 @@ tools:
     optional: true
     brew:
       cask: true
+toolDeps:
+  - pass
+  - pass-otp
+  - bitwarden-cli
+  - bitwarden
