@@ -5,10 +5,13 @@ tools:
     checkBrew: true
     brew: true
   bitwarden-cli:
-    optional: true
     checkCommand: bw
     brew: true
   bitwarden:
-    optional: true
     brew:
       cask: true
+toolDeps:
+  - pass
+  - pass-otp
+  - bitwarden-cli
+  - bitwarden

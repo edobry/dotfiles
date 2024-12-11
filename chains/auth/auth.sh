@@ -13,11 +13,11 @@ DOT_AUTH_CREDS_DIR_FIELD="credsDir"
 DOT_AUTH_GPG_KEY_NAME_FIELD="keyName"
 
 function dotAuthGetCredsDir() {
-    chiExpandPath "$(chiConfigChainReadField dotfiles:auth "$DOT_AUTH_CREDS_DIR_FIELD")"
+    chiExpandPath "$(chiConfigUserRead dotfiles auth "$DOT_AUTH_CREDS_DIR_FIELD")"
 }
 
 function dotAuthGetKeyName() {
-    chiConfigChainReadField dotfiles:auth "$DOT_AUTH_GPG_KEY_NAME_FIELD"
+    chiConfigUserRead dotfiles auth "$DOT_AUTH_GPG_KEY_NAME_FIELD"
 }
 
 function gpgImport() {
