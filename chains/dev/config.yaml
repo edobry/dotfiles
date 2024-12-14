@@ -32,16 +32,18 @@ tools:
     optional: true
     brew: true
 # cli utils
-  mike-engel/jwt-cli/jwt-cli:
+  jwt-cli:
     optional: true
     brew:
       tap: mike-engel/jwt-cli
+      name: mike-engel/jwt-cli/jwt-cli
   # command output timestamper
-  zmwangx/ets/ets:
+  ets:
     optional: true
     brew:
       tap: zmwangx/ets
       tapUrl: https://github.com/zmwangx/ets
+      name: zmwangx/ets/ets
 # markdown
   mdcat:
     brew: true
