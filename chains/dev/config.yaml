@@ -1,4 +1,3 @@
-enabled: false
 tools:
 # version control
   git-filter-repo:
@@ -23,18 +22,6 @@ tools:
     optional: true
     brew:
       link: false
-  node:
-    brew: true
-  yarn:
-    brew: true
-  pyenv:
-    brew: true
-  pyenv-virtualenv:
-    brew: true
-  pipenv:
-    brew: true
-  go:
-    brew: true
   gradle-completion:
     optional: true
     brew: true
