@@ -7,10 +7,10 @@ sourceEnv() {
     fi
 }
 
-alias originalCd="cd"
-chdir() {
-    originalCd $1
-    sourceEnv
-}
+# alias originalCd="cd"
+# chdir() {
+#     originalCd $1
+#     sourceEnv
+# }
 
-alias cd="chdir"
+# alias cd="chdir"
